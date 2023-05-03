@@ -19,7 +19,19 @@ const AppHeader = styled.div`
   padding: 12px;
   background-color: #313640;
 `
+
+const STOCKSYMBOLS = {
+  Apple: 'AAPL',
+  Amazon: 'AMZN',
+  Disney: 'DIS',
+  IBM: 'IBM',
+  MicroSoft: 'MSFT',
+  Tesla: 'TSLA'
+}
+
 function App() {
+  console.log(STOCKSYMBOLS);
+  
   return (
     <AppWrapper>
       <AppHeader>FINOS UI</AppHeader>
