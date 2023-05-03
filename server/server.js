@@ -11,9 +11,8 @@ app.get("/url", (req, res, next) => {
 
 app.get("/getContact/:ticker", (req, res, next) => {
     console.log(req.params.ticker)
-    const mapping = { "AAPL" : "A","MSFT" : "B","BAC" : "B","MS" : "M","JPM" : "J" }
+    const mapping = { "AAPL":"user1@bofa.com", "MSFT":"user2@bofa.com","BAC":"user3@bofa.com","MS":"user2@bofa.com","JPM" : "user4@bofa.com" }
 
-    
     const filteredContact = Object.keys(mapping)
     .filter((key) => key === (req.params.ticker))
             .reduce((obj, key) => {
