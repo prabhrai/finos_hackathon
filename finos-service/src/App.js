@@ -5,11 +5,11 @@ import data from "../data.json" assert { type: "json" };
 const app=()=>{
   const fd3= useInstnce<DesktopAgent>(DesktopAgent);
   const [channel, setChannel] = useState<Channel>(null);
-  const [contactsRequest, setContactsRequest] = useState<ContactsRequest>(null);
-}
+
+
 
 useEffect(()=>{
-   fdc3.getOrCreateChannel("contactsChannel").then(channel=> setChannelState(channel));
+   fdc3.getOrCreateChannel("contactsChannel").then(channel=> setChannel(channel));
   
 },[fdc3])
 
@@ -42,4 +42,18 @@ const fetchContacts= (ticker)=>{
   }
   return contactsResult;
 }
+
+
 )
+
+return (
+  <div>
+    <h1>FINOS Contacts Service</h1>
+    <p>`received chat request for ${req.params.ticker}`</p>
+  </div>
+)
+
+
+
+}
+export default App;
