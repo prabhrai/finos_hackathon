@@ -41,14 +41,15 @@ const GridWrapper = styled.div`
 `
 
 function App() {
-  const [rowData, setRowData] = useState();
+  const [rowData, setRowData] = useState(null);
+  const [chatData, setChatData] = useState(null);
 
   useEffect(() => {
     setRowData(MOCKDATA);
   }, []);
 
   const columnDefs = [
-    {field: 'action', flex: 1, cellRenderer: ChatButton},
+    {field: 'action', flex: 1, cellRenderer: ChatButton, cellRendererParams: {setChatData: setChatData}},
     {field: 'security', flex: 2, cellRenderer: StockName},
     {field: 'ticker', flex: 1},
     {field: 'price', flex: 1},
@@ -58,6 +59,8 @@ function App() {
     {field: 'email', flex: 1},
   ]
 
+  if (!rowData) return <div>...Loading</div>
+  console.log(chatData);
   return (
     <AppWrapper>
       <AppHeader>FINOS UI</AppHeader>

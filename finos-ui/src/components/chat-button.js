@@ -26,10 +26,14 @@ const ChatButtonStyles = styled.div`
     }
 `
 
-function ChatButton() {
+function ChatButton({ data, setChatData }) {
+    const handleButton = () => {
+        console.log(data);
+        setChatData(data);
+    }
     return (
         <ChatButtonStyles>
-            <button>Start Chat</button>
+            <button onClick={handleButton}>Start Chat</button>
         </ChatButtonStyles>
     )
 }
