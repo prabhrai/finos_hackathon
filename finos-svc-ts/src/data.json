@@ -1,6 +1,6 @@
 [
   {
-    "ticker": "EVT",
+    "ticker": "MSFT",
     "contact": {
       "first_name": "Mella",
       "last_name": "Larchiere",
@@ -12,7 +12,7 @@
     }
   },
   {
-    "ticker": "CGG",
+    "ticker": "TSLA",
     "contact": {
       "first_name": "Brooke",
       "last_name": "Goter",
@@ -24,7 +24,7 @@
     }
   },
   {
-    "ticker": "UMH^A",
+    "ticker": "BAC",
     "contact": {
       "first_name": "Delmore",
       "last_name": "Strangwood",
@@ -36,7 +36,7 @@
     }
   },
   {
-    "ticker": "RLJ",
+    "ticker": "MSFT2",
     "contact": {
       "first_name": "Eugene",
       "last_name": "Comelli",
