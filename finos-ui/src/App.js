@@ -7,6 +7,7 @@ import styled from "styled-components";
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import ChatButton from './components/chat-button';
+import PercentageDirection from './components/percentage-direction';
 
 const AppWrapper = styled.div`
   position: relative;
@@ -76,9 +77,7 @@ function App() {
     {field: 'ticker', flex: 1},
     {field: 'price', flex: 1},
     {field: 'open_price', flex: 1},
-    {field: 'trader', flex: 1},
-    {field: 'percent_change', flex: 1},
-    {field: 'email', flex: 1},
+    {field: 'percent_change', flex: 1, cellRenderer: PercentageDirection},
   ]
 
   if (!rowData) return <div>...Loading</div>
