@@ -66,12 +66,15 @@ const FinosConnector = () => {
           let ticker = instrument?.id?.ticker;
           console.log("received ticker " + ticker);
           var contactResult = fetchContacts(ticker);
-
+          if(!contactResult){
+            return;
+          }
+          
           const contact = {
             type: "fdc3.contact",
-            name: contactResult.contacts[0].first_name,
+            name: contactResult?.contacts[0]?.first_name,
             id: {
-              email: contactResult.contacts[0].email,
+              email: contactResult?.contacts[0]?.email,
             },
           };
           window.fdc3.raiseIntent("StartChat", contact);
