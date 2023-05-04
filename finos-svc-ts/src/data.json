@@ -1,0 +1,182 @@
+[
+  {
+    "ticker": "EVT",
+    "contact": {
+      "first_name": "Mella",
+      "last_name": "Larchiere",
+      "email": "mlarchiere0@wiley.com",
+      "phone_number": "420-649-5401",
+      "company_name": "Ailane",
+      "job_title": "Budget/Accounting Analyst III",
+      "department": "Support"
+    }
+  },
+  {
+    "ticker": "CGG",
+    "contact": {
+      "first_name": "Brooke",
+      "last_name": "Goter",
+      "email": "bgoter1@prlog.org",
+      "phone_number": "553-431-0092",
+      "company_name": "Yoveo",
+      "job_title": "Account Executive",
+      "department": "Marketing"
+    }
+  },
+  {
+    "ticker": "UMH^A",
+    "contact": {
+      "first_name": "Delmore",
+      "last_name": "Strangwood",
+      "email": "dstrangwood2@bravesites.com",
+      "phone_number": "118-275-8978",
+      "company_name": "Jabberstorm",
+      "job_title": "Associate Professor",
+      "department": "Engineering"
+    }
+  },
+  {
+    "ticker": "RLJ",
+    "contact": {
+      "first_name": "Eugene",
+      "last_name": "Comelli",
+      "email": "ecomelli3@diigo.com",
+      "phone_number": "472-793-1646",
+      "company_name": "Yakidoo",
+      "job_title": "Help Desk Operator",
+      "department": "Support"
+    }
+  },
+  {
+    "ticker": "MITT^A",
+    "contact": {
+      "first_name": "Ranique",
+      "last_name": "Lilleycrop",
+      "email": "rlilleycrop4@tinyurl.com",
+      "phone_number": "300-299-9482",
+      "company_name": "Gigazoom",
+      "job_title": "Civil Engineer",
+      "department": "Product Management"
+    }
+  },
+  {
+    "ticker": "IRDM",
+    "contact": {
+      "first_name": "Merridie",
+      "last_name": "Perrelle",
+      "email": "mperrelle5@sitemeter.com",
+      "phone_number": "508-437-1587",
+      "company_name": "Brainbox",
+      "job_title": "Business Systems Development Analyst",
+      "department": "Training"
+    }
+  },
+  {
+    "ticker": "ENTG",
+    "contact": {
+      "first_name": "Stace",
+      "last_name": "Seel",
+      "email": "sseel6@soup.io",
+      "phone_number": "534-643-0417",
+      "company_name": "Snaptags",
+      "job_title": "Environmental Tech",
+      "department": "Engineering"
+    }
+  },
+  {
+    "ticker": "ENPH",
+    "contact": {
+      "first_name": "Brittan",
+      "last_name": "Spours",
+      "email": "bspours7@uiuc.edu",
+      "phone_number": "482-973-5255",
+      "company_name": "Katz",
+      "job_title": "Speech Pathologist",
+      "department": "Accounting"
+    }
+  },
+  {
+    "ticker": "FFNW",
+    "contact": {
+      "first_name": "Cortie",
+      "last_name": "Muncer",
+      "email": "cmuncer8@bing.com",
+      "phone_number": "827-822-8517",
+      "company_name": "Zoovu",
+      "job_title": "Structural Analysis Engineer",
+      "department": "Human Resources"
+    }
+  },
+  {
+    "ticker": "NEPT",
+    "contact": {
+      "first_name": "Leland",
+      "last_name": "Tuckerman",
+      "email": "ltuckerman9@nba.com",
+      "phone_number": "484-794-9249",
+      "company_name": "Jaxspan",
+      "job_title": "Associate Professor",
+      "department": "Accounting"
+    }
+  },
+  {
+    "ticker": "PBNC",
+    "contact": {
+      "first_name": "Margie",
+      "last_name": "Carress",
+      "email": "mcarressa@prnewswire.com",
+      "phone_number": "909-234-7582",
+      "company_name": "Gigazoom",
+      "job_title": "Environmental Specialist",
+      "department": "Sales"
+    }
+  },
+  {
+    "ticker": "TDE",
+    "contact": {
+      "first_name": "Sabina",
+      "last_name": "Sowter",
+      "email": "ssowterb@mayoclinic.com",
+      "phone_number": "580-910-9513",
+      "company_name": "Katz",
+      "job_title": "Software Consultant",
+      "department": "Research and Development"
+    }
+  },
+  {
+    "ticker": "PSC",
+    "contact": {
+      "first_name": "Ebba",
+      "last_name": "Lugg",
+      "email": "eluggc@is.gd",
+      "phone_number": "484-728-0541",
+      "company_name": "Youspan",
+      "job_title": "Computer Systems Analyst III",
+      "department": "Human Resources"
+    }
+  },
+  {
+    "ticker": "HGSH",
+    "contact": {
+      "first_name": "Tally",
+      "last_name": "Tilby",
+      "email": "ttilbyd@wikispaces.com",
+      "phone_number": "314-194-3454",
+      "company_name": "Plajo",
+      "job_title": "Food Chemist",
+      "department": "Services"
+    }
+  },
+  {
+    "ticker": "DKS",
+    "contact": {
+      "first_name": "Jory",
+      "last_name": "Keyden",
+      "email": "jkeydene@icq.com",
+      "phone_number": "428-221-2559",
+      "company_name": "Aivee",
+      "job_title": "Graphic Designer",
+      "department": "Services"
+    }
+  }
+]
