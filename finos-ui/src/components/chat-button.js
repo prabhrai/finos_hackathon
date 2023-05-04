@@ -19,7 +19,6 @@ const ChatButtonStyles = styled.div`
         color: black;
         border: none;
         transition: .3s;
-        cursor: pointer;
         &:hover {
             background-color: #7D8C5E;
             color: white;
