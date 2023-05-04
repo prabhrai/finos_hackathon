@@ -2,18 +2,31 @@
 // import { listenerCancelled } from "@reduxjs/toolkit/dist/listenerMiddleware/exceptions";
 import { useState, useEffect, useInstance} from "react";
 import data from "./data.json" ;
-import { DesktopAgent} from "@finos/fdc3";
+// import { fdc3Ready } from "@finos/fdc3";
 
 
 const Connector = () => {
-  const fdc3= useInstance<DesktopAgent>(DesktopAgent);
-  const [channel, setChannel] = useState<Channel>(null);
+    const instrument = {
+      type: 'fdc3.instrument',
+      id: {
+          ticker: 'AAPL',
+          ISIN: 'US0378331005',
+          FIGI : 'BBG000B9XRY4'
+      }
+  }
+  
+
+  // const fdc3= useInstance<DesktopAgent>(DesktopAgent);
+  // const [channel, setChannel] = useState<Channel>(null);
 
   useEffect(()=>{
-    fdc3.getOrCreateChannel("contactsChannel").then(channel=> setChannel(channel));
+    const result = window.fdc3.raiseIntent('ViewAnalysis', instrument)
+    console.log(result)
+    // fdc3.getOrCreateChannel("contactsChannel").then(channel=> setChannel(channel));
     
-  },[fdc3])
+  },[instrument])
 
+  /*
   useEffect(()=>{  
 
     fdc3.addIntentListener("GetContacts", contactsRequest=>{
@@ -40,12 +53,12 @@ const Connector = () => {
     }
     return contactsResult;
   }
-)
+  */
 
 return (
   <div>
     <h1>FINOS Contacts Service</h1>
-    <p>`received chat request for ${req.params.ticker}`</p>
+    <p>`received chat request for`</p>
   </div>
 )
 
