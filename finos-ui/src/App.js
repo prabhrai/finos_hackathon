@@ -45,11 +45,6 @@ function App() {
   const [chatData, setChatData] = useState(null);
   const [channel, setChannel] = useState(null);
 
-  const fireInstrumentOnChannel = (messageObject) => {
-    console.log("broadcasting instrument on contactsChannel")
-    channel?.broadcast(messageObject);  
-  };
-
   useEffect(() => {
     setRowData(MOCKDATA);
   }, [channel]);
@@ -59,6 +54,11 @@ function App() {
   },[])
 
   useEffect(() => {
+    const fireInstrumentOnChannel = (messageObject) => {
+      console.log("broadcasting instrument on contactsChannel")
+      channel?.broadcast(messageObject);  
+    };
+
     if (chatData) {
       let messageObject = {
         type: 'fdc3.instrument',
@@ -68,7 +68,7 @@ function App() {
 
       fireInstrumentOnChannel(messageObject);
     }
-  }, [chatData, fireInstrumentOnChannel]);
+  }, [chatData, channel]);
 
   const columnDefs = [
     {field: 'action', flex: 1, cellRenderer: ChatButton, cellRendererParams: {setChatData: setChatData}},
