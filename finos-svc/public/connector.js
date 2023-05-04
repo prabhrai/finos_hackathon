@@ -9,8 +9,9 @@ const connector=()=>{
 
 
 useEffect(()=>{
-   fdc3.getOrCreateChannel("contactsChannel").then(channel=> setChannel(channel));
-  
+  if (window.fdc3 !== undefined) {
+    window.fdc3.getOrCreateChannel("contactsChannel").then(channel=> setChannel(channel));
+  }
 },[fdc3])
 
 useEffect(()=>{  
