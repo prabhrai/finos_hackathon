@@ -4,7 +4,9 @@ import { Channel, DesktopAgent } from "@finos/fdc3";
 
 const FinosConnector = () => {
   const [channel, setChannel] = useState<Channel>();
-  const [currentIntent, setCurrentIntent] = useState<string>();
+  const [currentTicker, setCurrentTicker] = useState<string>();
+  const [currentContact, setCurrentContact] = useState<string>();
+
   const instrument = {
     type: "fdc3.instrument",
     id: {
@@ -52,6 +54,7 @@ const FinosConnector = () => {
       .then((channel) => setChannel(channel));
     console.log("registered addIntentListener");
     try {
+      setCurrentContact("");
       // listener that logs metadata for the message a specific type
       const contactListener = channel?.addContextListener(
         "fdc3.instrument",
@@ -62,14 +65,15 @@ const FinosConnector = () => {
             )}\nOriginating app: ${JSON.stringify(metadata?.source)}`
           );
           //do something else with the context
-          setCurrentIntent(instrument?.name);
           let ticker = instrument?.id?.ticker;
+          setCurrentTicker(ticker);
           console.log("received ticker " + ticker);
           var contactResult = fetchContacts(ticker);
-          if(!contactResult){
+          if (!contactResult) {
+            setCurrentContact("No contact found");
             return;
           }
-          
+          setCurrentContact(contactResult?.contacts[0]?.first_name);
           const contact = {
             type: "fdc3.contact",
             name: contactResult?.contacts[0]?.first_name,
@@ -87,13 +91,15 @@ const FinosConnector = () => {
 
   return (
     <div>
-      <h1>FINOS Contacts Service</h1>
-      <p>`received chat request for {currentIntent} `</p>
-      <button onClick={fireContact}> Raise Contact</button>
+      {/* <h1>FINOS Contacts Service</h1> */}
+      <p>Received chat request for ticker : {currentTicker} </p>
+      <p>Found contact : {currentContact} </p>
+
+      {/* <button onClick={fireContact}> Raise Contact</button>
       <button onClick={fireInstrumentOnChannel}>
         {" "}
         Raise Intrument on contactsChannel
-      </button>
+      </button> */}
       {/* <button  onClick={fireInstrument}> Raise Intrument</button>
         <button  onClick={fireInstrument}> Raise Intrument</button> */}
 
