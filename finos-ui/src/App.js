@@ -13,7 +13,7 @@ const AppWrapper = styled.div`
   margin: 0;
   width: 100%;
   height: 100vh;
-  padding: 75px 25px 0;
+  padding: 75px 12px 0;
   background-color: #282c34; 
 `
 
@@ -32,7 +32,7 @@ const AppHeader = styled.div`
 const GridWrapper = styled.div`
   margin: 0;
   width: 100%;
-  height: calc(100% - 75px);
+  height: calc(100% - 40px);
   overflow: auto;
 
   .ag-root-wrapper {
