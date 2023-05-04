@@ -2,15 +2,16 @@
 import { listenerCancelled } from "@reduxjs/toolkit/dist/listenerMiddleware/exceptions";
 import { useState, useEffect } from "react";
 import data from "../data.json" assert { type: "json" };
-const app=()=>{
+const connector=()=>{
   const fd3= useInstnce<DesktopAgent>(DesktopAgent);
   const [channel, setChannel] = useState<Channel>(null);
 
 
 
 useEffect(()=>{
-   fdc3.getOrCreateChannel("contactsChannel").then(channel=> setChannel(channel));
-  
+  if (window.fdc3 !== undefined) {
+    window.fdc3.getOrCreateChannel("contactsChannel").then(channel=> setChannel(channel));
+  }
 },[fdc3])
 
 useEffect(()=>{  
