@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/7f49984b-6cff-4616-b352-2b356b264508/resourceGroups/finos-api/providers/Microsoft.Web/sites/finos-api",
+    "appService.deploySubpath": "."
+}
