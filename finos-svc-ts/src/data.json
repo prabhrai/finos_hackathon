@@ -1,6 +1,6 @@
 [
   {
-    "ticker": "EVT",
+    "ticker": "MSFT",
     "contact": {
       "first_name": "Mella",
       "last_name": "Larchiere",
@@ -12,7 +12,7 @@
     }
   },
   {
-    "ticker": "CGG",
+    "ticker": "TSLA",
     "contact": {
       "first_name": "Brooke",
       "last_name": "Goter",
@@ -24,7 +24,7 @@
     }
   },
   {
-    "ticker": "UMH^A",
+    "ticker": "BAC",
     "contact": {
       "first_name": "Delmore",
       "last_name": "Strangwood",
@@ -36,7 +36,7 @@
     }
   },
   {
-    "ticker": "RLJ",
+    "ticker": "MS",
     "contact": {
       "first_name": "Eugene",
       "last_name": "Comelli",
@@ -48,7 +48,7 @@
     }
   },
   {
-    "ticker": "MITT^A",
+    "ticker": "RBC",
     "contact": {
       "first_name": "Ranique",
       "last_name": "Lilleycrop",
@@ -60,7 +60,7 @@
     }
   },
   {
-    "ticker": "IRDM",
+    "ticker": "BMO",
     "contact": {
       "first_name": "Merridie",
       "last_name": "Perrelle",
@@ -72,7 +72,7 @@
     }
   },
   {
-    "ticker": "ENTG",
+    "ticker": "NFLX",
     "contact": {
       "first_name": "Stace",
       "last_name": "Seel",
@@ -84,7 +84,7 @@
     }
   },
   {
-    "ticker": "ENPH",
+    "ticker": "SPOT",
     "contact": {
       "first_name": "Brittan",
       "last_name": "Spours",
@@ -96,7 +96,7 @@
     }
   },
   {
-    "ticker": "FFNW",
+    "ticker": "AAPL",
     "contact": {
       "first_name": "Cortie",
       "last_name": "Muncer",
@@ -132,7 +132,7 @@
     }
   },
   {
-    "ticker": "TDE",
+    "ticker": "TD",
     "contact": {
       "first_name": "Sabina",
       "last_name": "Sowter",
