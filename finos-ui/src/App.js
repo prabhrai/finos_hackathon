@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Channel, DesktopAgent } from "@finos/fdc3";
 import { AgGridReact } from 'ag-grid-react';
 import MOCKDATA from './utils/MOCK_DATA.json';
 import StockName from './components/stock-name';
@@ -7,6 +8,7 @@ import styled from "styled-components";
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import ChatButton from './components/chat-button';
+import { useCallback } from 'react';
 
 const AppWrapper = styled.div`
   position: relative;
@@ -43,10 +45,32 @@ const GridWrapper = styled.div`
 function App() {
   const [rowData, setRowData] = useState(null);
   const [chatData, setChatData] = useState(null);
+  const [channel, setChannel] = useState(null);
+
+  const fireInstrumentOnChannel = (messageObject) => {
+    console.log("broadcasting instrument on contactsChannel")
+    channel?.broadcast(messageObject);  
+  };
 
   useEffect(() => {
     setRowData(MOCKDATA);
-  }, []);
+  }, [channel]);
+
+  useEffect(() => {
+    window.fdc3.getOrCreateChannel("contactsChannel").then(channel => setChannel(channel));
+  },[])
+
+  useEffect(() => {
+    if (chatData) {
+      let messageObject = {
+        type: 'fdc3.instrument',
+        id: { ticker: chatData.ticker },
+        metaData: chatData,
+      }
+
+      fireInstrumentOnChannel(messageObject);
+    }
+  }, [chatData, fireInstrumentOnChannel]);
 
   const columnDefs = [
     {field: 'action', flex: 1, cellRenderer: ChatButton, cellRendererParams: {setChatData: setChatData}},
@@ -60,7 +84,7 @@ function App() {
   ]
 
   if (!rowData) return <div>...Loading</div>
-  console.log(chatData);
+
   return (
     <AppWrapper>
       <AppHeader>FINOS UI</AppHeader>
