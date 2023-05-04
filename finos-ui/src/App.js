@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import MOCKDATA from './utils/MOCK_DATA.json';
+import StockName from './components/stock-name';
 import styled from "styled-components";
 
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
+import ChatButton from './components/chat-button';
 
 const AppWrapper = styled.div`
   position: relative;
@@ -46,7 +48,8 @@ function App() {
   }, []);
 
   const columnDefs = [
-    {field: 'security', flex: 1},
+    {field: 'action', flex: 1, cellRenderer: ChatButton},
+    {field: 'security', flex: 2, cellRenderer: StockName},
     {field: 'ticker', flex: 1},
     {field: 'price', flex: 1},
     {field: 'open_price', flex: 1},
