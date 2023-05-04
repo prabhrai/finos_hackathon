@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Channel, DesktopAgent } from "@finos/fdc3";
 import { AgGridReact } from 'ag-grid-react';
 import MOCKDATA from './utils/MOCK_DATA.json';
 import StockName from './components/stock-name';
@@ -8,7 +7,6 @@ import styled from "styled-components";
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import ChatButton from './components/chat-button';
-import { useCallback } from 'react';
 
 const AppWrapper = styled.div`
   position: relative;
