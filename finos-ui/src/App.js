@@ -43,10 +43,32 @@ const GridWrapper = styled.div`
 function App() {
   const [rowData, setRowData] = useState(null);
   const [chatData, setChatData] = useState(null);
+  const [channel, setChannel] = useState(null);
 
   useEffect(() => {
     setRowData(MOCKDATA);
-  }, []);
+  }, [channel]);
+
+  useEffect(() => {
+    window.fdc3.getOrCreateChannel("contactsChannel").then(channel => setChannel(channel));
+  },[])
+
+  useEffect(() => {
+    const fireInstrumentOnChannel = (messageObject) => {
+      console.log("broadcasting instrument on contactsChannel")
+      channel?.broadcast(messageObject);  
+    };
+
+    if (chatData) {
+      let messageObject = {
+        type: 'fdc3.instrument',
+        id: { ticker: chatData.ticker },
+        metaData: chatData,
+      }
+
+      fireInstrumentOnChannel(messageObject);
+    }
+  }, [chatData, channel]);
 
   const columnDefs = [
     {field: 'action', flex: 1, cellRenderer: ChatButton, cellRendererParams: {setChatData: setChatData}},
@@ -60,7 +82,7 @@ function App() {
   ]
 
   if (!rowData) return <div>...Loading</div>
-  console.log(chatData);
+
   return (
     <AppWrapper>
       <AppHeader>FINOS UI</AppHeader>
