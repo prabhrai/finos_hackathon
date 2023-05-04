@@ -23,26 +23,32 @@ const FinosConnector=()=>{
 
     const fireViewIntent = () => {
         //Raise an intent with a specified context
-        let context = {type: "fdc3.instrument", name: "Tesla, inc.", id: {ticker: "TSLA"}}; 
-        window.fdc3.raiseIntent("ViewChart", context);
+        // let context = {type: "fdc3.instrument", name: "Tesla, inc.", id: {ticker: "TSLA"}}; 
+        // window.fdc3.raiseIntent("ViewChart", context);
     }
 
     useEffect(()=>{
         window.fdc3.getOrCreateChannel("contactsChannel").then(channel=> setChannel(channel));
 
         console.log("registered addIntentListener")
-        //Handle a raised intent and log the originating app metadata
-        const listener = window.fdc3.addIntentListener('StartChat', (contact, metadata) => { 
-            console.log(`Received intent StartChat\nContext: ${contact}\nOriginating app: ${metadata?.source}`);
-            return;
-        });
+        try{
+            // //Handle a raised intent and log the originating app metadata
+            // const listener = window.fdc3.addIntentListener('StartChat', (contact, metadata) => { 
+            //     console.log(`Received intent StartChat\nContext: ${contact}\nOriginating app: ${metadata?.source}`);
+            //     return;
+            // });
 
-    },[])
+            // listener that logs metadata for the message a specific type
+        const contactListener = channel?.addContextListener('fdc3.instrument', (instrument, metadata) => { 
+            console.log(`Received context message\nContext: ${JSON.stringify(instrument)}\nOriginating app: ${JSON.stringify(metadata?.source)}`);
+            //do something else with the context
+            });
+        }
+        catch (error){
+            console.log(error);
+        }
+    },[channel])
 
-    useEffect(()=>{
-        // console.log("broadcasting instrument")
-        // channel?.broadcast(instrument);    
-    },[])
     return (
     <div>
         <h1>FINOS Contacts Service</h1>
