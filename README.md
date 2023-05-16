@@ -17,6 +17,8 @@ Useful apps, systems, projects, technologies, libraries and datasets
 -- Legend
 -- FDC3
 
+This project is a prdocut of the following [use case](https://www.google.com/url?q=https://github.com/finos/community/discussions/244&sa=D&source=calendar&ust=1684652936713598&usg=AOvVaw0ZVFu-QDIAsMJFuK8nvZyj) from the May 2023 FINOS Hackathon.
+
 ## Installation
 
 OS X & Linux:
